@@ -24,6 +24,7 @@ def main(params):
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
     
     engine.connect()
+    print("GREAT DONE")
     
     df_iter = pd.read_csv(csv_name, iterator=True, chunksize=100000)
     
