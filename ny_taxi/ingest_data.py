@@ -1,5 +1,4 @@
 import pandas as pd 
-import pyarrow.parquet as pq
 from time import time
 from sqlalchemy import create_engine
 import argparse
@@ -17,18 +16,10 @@ def main(params):
     
     csv_name = "output.csv"
     
-    parquet_name = "output.parquet"
     
-    os.system(f"wget {url} -O {parquet_name}")
+    os.system(f"wget {url} -O | gunzip > {csv_name}")
     
-    
-    df = pd.read_parquet(parquet_name)
-    
-    df.to_csv(csv_name, index=False)
-    
-    
-    
-    
+
     
     #download the csv
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
