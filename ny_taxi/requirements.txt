@@ -1,8 +1,8 @@
-psycopg==3.2.3
-pandas==2.2.3
-psycopg2-binary==2.9.10
-pyarrow==18.1.0
-SQLAlchemy==2.0.36
-sqlparse==0.5.3
+psycopg
+pandas
+psycopg2-binary
+pyarrow
+SQLAlchemy
+
 
 
