@@ -1,7 +1,6 @@
 psycopg
 pandas
 psycopg2-binary
-pyarrow
 SQLAlchemy
 
 
