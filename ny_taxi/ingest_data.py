@@ -17,7 +17,7 @@ def main(params):
     csv_name = "output.csv"
     
     
-    os.system(f"wget {url} -O | gunzip > {csv_name}")
+    os.system(f"wget -O temp.gz {url} && gunzip -c temp.gz > {csv_name} && rm temp.gz")
     
 
     
