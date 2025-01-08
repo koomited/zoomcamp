@@ -20,7 +20,6 @@ def main(params):
     os.system(f"wget -O temp.gz {url} && gunzip -c temp.gz > {csv_name} && rm temp.gz")
     
 
-    
     #download the csv
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
     
@@ -37,7 +36,11 @@ def main(params):
 
     df.head(0).to_sql(name=table_name, con=engine, if_exists="replace")
 
+    df.to_sql(name=table_name, con=engine, if_exists="append")
 
+
+
+    
     while True:
         df  = next(df_iter)
         df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
@@ -64,6 +67,11 @@ if __name__=="__main__":
 
     args = parser.parse_args()
     
+    main(args)
+
+
+
+
 
 
 
